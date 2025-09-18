@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: telegram-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 main.py
+    envVars:
+      - key: API_HASH
+        value: 6bf2b0a825260beafe9955ffed29f978
+      - key: APP_ID
+        value: 26106561
+      - key: TG_BOT_TOKEN
+        value: 8070107656:AAFwF3xX772Gj8Xjt22DEWkhoSKHCDLkCPk
+      - key: OWNER_ID
+        value: 7753899951
+      - key: CHANNEL_ID
+        value: -1002751155801
