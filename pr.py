@@ -3,12 +3,12 @@ import time
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
 
-app = Flask(name)
+app = Flask(__name__)
 api = Api(app)
 
 class Greeting(Resource):
     def get(self):
-        return "pr is Up & Running!"
+        return jsonify(message="pr is Up & Running!")
 
 class Ping(Resource):
     def get(self):
@@ -21,5 +21,5 @@ class Ping(Resource):
 api.add_resource(Greeting, '/')
 api.add_resource(Ping, '/ping')
 
-if name == "main":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
