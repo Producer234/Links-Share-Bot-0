@@ -1,2 +1,1 @@
-worker: python3 main.py
-web: python3 main.py
+worker: bash -c "sleep 30 && python3 main.py"
